@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<conio.h>
+#include<dos.h>
+int nhap()
+{
+
+	union REGS regs;
+	int x;
+	regs.h.ah = 1;
+	int86(0x21,&regs,&regs);
+	x-=0x30;
+	return x;
+}
+void main()
+{
+	int x;
+	printf("nhap 1 so tu 0->9 :");
+	x = nhap();
+	printf("so ban vua nhap la :%d ",x);
+}
