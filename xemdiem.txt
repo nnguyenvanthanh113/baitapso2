@@ -1,0 +1,14 @@
+thanh		0
+th		0
+thanh1		0
+thanhcute		0
+THA		4
+CUTE		6
+TEO		4
+01		2
+TH01		2
+THANHVALINH113diem dat duoc :2
+1diem dat duoc :0
+TESTdiem dat duoc :2
+diem dat duoc :0
+LINHCUTE33diem dat duoc :4

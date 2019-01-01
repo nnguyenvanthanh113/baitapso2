@@ -8,31 +8,32 @@ using namespace std;
 
 fstream f;
 fstream g;
+		//struct DE{
+		//	string CH;
+		//	string DAA;
+		//	string DAB;
+		//	string DAC;
+		//	string DA;
+		//};
 
-struct DE{
-	string CH;
-	string DAA;
-	string DAB;
-	string DAC;
-	string DA;
-};
 
-
-bool KiemTraDA(string a, string b){
-	if(a.compare(b) == 0)
-		return true;
-	else
-		return false;
-}
-//int KiemTraDA(char a,char b)
-//{
-//	int kt =strcmp(a,b);
-//	if(kt == 0)
-//		return 1;
+//bool KiemTraDA(string a, string b){
+//	if(a.compare(b) == 0)
+//		return true;
 //	else
-//		return 0;
+//		return false;
 //}
-// --- ham yeu cau luu diem ---
+void XemDiem(){
+	string s;
+	g.open("C://Users/Admin/Desktop/xemdiem.txt", ios::in);
+	cout << "diem nguoi choi da luu la:" << endl;
+	getline(g, s);
+	do{
+		cout << s << endl;
+		getline(g, s);
+	}while(s.compare("") != 0);
+	g.close();
+}
 void LuuDiem(int diem){
 	int a;
 	int k;
@@ -48,19 +49,29 @@ void LuuDiem(int diem){
 		fflush(stdin);
 		getline(cin, s);
 		g.open("C://Users/Admin/Desktop/xemdiem.txt", ios::out | ios::app);
-		g << s << "\t\t" << diem << "\n";
+		g << s << "diem dat duoc :" << diem << "\n";
 		g.close();
 		cout << "luu diem thanh cong" << endl << endl;
-		cout<<" muon xem diem thi nhan 1 nguoc lai nhan 0 :";
+		cout<<" muon xem diem thi nhan 1 nguoc lai nhan 0 :"<<endl;
 		cin>>k;
 		if(k == 1)
 		{
-			cout<<"diem so cua ban la :"<<diem;
+			cout<<"diem so cua ban la :"<<diem<<endl;
 		}
 		if(k == 0)
 		{
-			cout<<"Hen gap lai !!";
+			cout<<"Hen gap lai !!"<<endl;
 		}
+		int t;
+		do{
+		
+		cout<<"xem diem so cua cac nguoi choi nhan 2 or thoat nhan 3 "<<endl;
+		cin>>t;
+		if(t == 2)
+			XemDiem();
+		else
+			cout<<" chao than ai !!";
+		}while (t<2 && t>3);
 	}
 }
 
@@ -82,13 +93,14 @@ void MoDe(){
 		cout << s << endl;
 		getline(f, s);		// --- dong 4 / dap an C ---
 		cout << s << endl;
+		fflush(stdin);
 		getline(f, s);		// --- dong 5 / dap an dung ---
 		cout << "cau tra loi cua ban la: ";
-		fflush(stdin);
+
 		getline(cin, x);	// --- dap an nguoi thi ---
 		cout << endl;
 		// --- kiem tra dap an dung voi dap an nguoi thi va cong diem ---
-		if(KiemTraDA(s, x) == 1)
+		if(s.compare(x) == 1)
 			diem += 2;
 	}
 	cout << "da hoan thanh bai kiem tra!!!" << endl << endl;
@@ -98,17 +110,7 @@ void MoDe(){
 
 
 // --- xem diem da luu trong LUU_DIEM.txt ---
-void XemDiem(){
-	string s;
-	g.open("C://Users/Admin/Desktop/xemdiem.txt", ios::in);
-	cout << "diem nguoi choi da luu la:" << endl;
-	getline(g, s);
-	do{
-		cout << s << endl;
-		getline(g, s);
-	}while(s.compare("") != 0);
-	g.close();
-}
+
 
 // --- ham chon 1 trong cac bo de ---
 void ChonDe(){
@@ -126,6 +128,11 @@ void ChonDe(){
 		f.open("C://Users/Admin/Desktop/DE_1.txt", ios::in);
 		MoDe();
 		f.close();
+//	if(a == 2){
+//		f.open("C://Users/Admin/Desktop/DE_2.txt", ios::in);
+//		MoDe();
+//		f.close();
+//	}
 	}
 //	else
 //		if(a == 2){
@@ -139,7 +146,7 @@ void ChonDe(){
 //				MoDe();
 //				f.close();
 //			}
-			else
+			if(a==4)
 				XemDiem();
 }
 

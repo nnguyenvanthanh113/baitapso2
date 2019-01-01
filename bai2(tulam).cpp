@@ -9,6 +9,7 @@ struct NgayThang
 	int	tg;
 	int nm;
 };
+	typedef NgayThang ngay;
 void Nhap(string &s, NgayThang &ngay)
 {
 	
@@ -103,25 +104,26 @@ void sothutungaytrongnam(NgayThang ngay)
     thutu=n+(ngay.ng);
     cout<<"ngay thu "<<thutu <<" trong nam";
 }
-int CongSoNguyenDuong(NgayThang &ngay)
-{	
-	int n;
-	cout<<"nhap so nguyen duong :";
-	cin>>n;
-//	int k = n + ngay.ng;
-	int h = n + sothutungaytrongnam(ngay);
-	if(h>365)
-	{
-		if(ktranhuan(ngay))
-			int t = h - 366;	
-		else 
-			{
-				t = h - 365;
-			}
-}
+//int CongSoNguyenDuong(NgayThang ngay)
+//{	
+//	int n,t;
+//	cout<<"nhap so nguyen duong :";
+//	cin>>n;
+////	int k = n + ngay.ng;
+//	int h = n + sothutungaytrongnam(ngay);
+//	if(h>365)
+//	{
+//		if(ktranhuan(ngay))
+//			 t = h - 366;	
+//		else 
+//			{
+//				t = h - 365;
+//			}
+//}
+//}
 int main()
 {	
-	struct NgayThang ngay;
+	NgayThang ngay;
 	string s;
 	Nhap(s,ngay);
 //	cout<<"nhap ngay thang nam : ";
